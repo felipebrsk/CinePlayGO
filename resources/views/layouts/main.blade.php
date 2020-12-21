@@ -43,6 +43,7 @@
 						<img src="/storage/upload/icone-sem-foto.png" alt="Foto de perfil" style=background-color:gray; class="rounded-full w-8 h-8">
 					</a>
 				</div>
+					<div class="flex ml-2">Bem vindo, {{ auth()->user()->name }}!</div>
 			</div>
 		</div>
 	</nav>

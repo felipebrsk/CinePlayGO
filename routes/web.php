@@ -5,6 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(["verify" => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'App\Http\Controllers\FilmesController@index')->name('filmes.index');
 
-Route::view('/movie', 'show');
+Route::get('/filmes/{filme}', 'App\Http\Controllers\FilmesController@show')->name('filmes.show');

@@ -30,4 +30,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'tmdb' => [
+        'token' => env('TMDB_TOKEN'),
+    ],
+    'language' => [
+        'iso_639_1' => 'pt',
+        'english_name' => 'Portuguese',
+        'name' => 'Português'
+    ],
+
 ];
