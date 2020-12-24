@@ -28,9 +28,9 @@
 <div class="card-header">
 				<h3>Registro</h3>
 				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
+					<a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+					<a href="#"><span><i class="fab fa-google-plus-square"></i></span></a>
+					<a href="#"><span><i class="fab fa-twitter-square"></i></span></a>
 				</div>
 			</div>
 <div class="container">
