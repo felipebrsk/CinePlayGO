@@ -13,4 +13,8 @@ Route::get('/filmes/{video}', 'App\Http\Controllers\FilmesController@video')->na
 
 Route::get('/filmes/{elenco}', 'App\Http\Controllers\FilmesController@elenco')->name('filmes.elenco');
 
-Route::get('/tv', 'App\Http\Controllers\FilmesController@index')->name('tv.index');
+Route::get('/series', 'App\Http\Controllers\SeriesController@index')->name('series.index');
+
+Route::get('/series/{serie}', 'App\Http\Controllers\SeriesController@show')->name('series.show');
+
+Route::get('/series/{elenco}', 'App\Http\Controllers\SeriesController@elenco')->name('series.elenco');

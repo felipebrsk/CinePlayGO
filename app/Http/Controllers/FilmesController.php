@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\View\Components\MovieCard;
+use App\ViewModels\MoviesViewModel;
+use App\ViewModels\MovieViewModel;
 
 class FilmesController extends Controller
 {
@@ -26,13 +28,9 @@ class FilmesController extends Controller
         ->json()['results'];
         
         //requisitar os gêneros dos filmes
-        $genresArray = Http::withToken(config('services.tmdb.token'))
+        $genres = Http::withToken(config('services.tmdb.token'))
         ->get('https://api.themoviedb.org/3/genre/movie/list?language=pt-BR')
         ->json()['genres'];
-        
-        $genres = collect($genresArray)->mapWithKeys(function ($genre) {
-            return [$genre['id'] => $genre['name']];
-        });
         
         //requisitar filmes lançamentos
         $upcomingMovies = Http::withToken(config('services.tmdb.token'))
@@ -44,16 +42,10 @@ class FilmesController extends Controller
         ->get('https://api.themoviedb.org/3/movie/top_rated?language=pt-BR')
         ->json()['results'];
         
-        //dump($token);
         
-        return view('home')->with([
-            'popularMovies' => $popularMovies,
-            'genres' => $genres,
-            'nowPlaying' => $nowPlaying,
-            'upcomingMovies' => $upcomingMovies,
-            'topMovies' => $topMovies
-            
-        ]);
+        $viewModel = new MoviesViewModel($popularMovies, $nowPlaying, $genres, $upcomingMovies, $topMovies);
+        
+        return view('home', $viewModel);
     }
 
     /**
@@ -106,6 +98,7 @@ class FilmesController extends Controller
         ->json()['cast'];
         
         //dump($popularMovies);
+        $viewModel = new MovieViewModel($popularMovies, $similarMovies, $genres, $elenco);
         
         return view('show')->with([
             'popularMovies' => $popularMovies,

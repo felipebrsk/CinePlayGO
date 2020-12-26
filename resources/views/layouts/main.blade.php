@@ -26,10 +26,7 @@
 					<a href="{{route('filmes.index')}}" class="hover:text-gray-300">Filmes</a>
 				</li>
 				<li class="md:ml-16 mt-3 md:mt-0">
-					<a href="#" class="hover:text-gray-300">Séries</a>
-				</li>
-				<li class="md:ml-16 mt-3 md:mt-0">
-					<a href="#" class="hover:text-gray-300">TV</a>
+					<a href="{{route('series.index')}}" class="hover:text-gray-300">Séries</a>
 				</li>
 				<li class="md:ml-16 mt-3 md:mt-0">
 					<a href="#" class="hover:text-gray-300">Atores</a>
