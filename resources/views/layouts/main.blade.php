@@ -48,8 +48,8 @@
                                                      document.getElementById('logout-form').submit();">Sair</a></div>
                     </form>
 					@else
-					<div class="ml-4 hover:text-gray-300"><a href="{{route('login')}}">Login</a>
-					<a class="ml-4" href="{{route('register')}}">Cadastro</a></div>
+					<div class="ml-4 hover:text-gray-300" style=position:relative;top:11px;><a href="{{route('login')}}">Login</a></div>
+					<div class="ml-16 hover:text-gray-300" style=position:relative;bottom:12.5px;><a class="ml-4" href="{{route('register')}}">Cadastro</a></div>
 					@endif
 				</div>
 			</div>
