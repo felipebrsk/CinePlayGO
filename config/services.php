@@ -33,6 +33,7 @@ return [
     'tmdb' => [
         'token' => env('TMDB_TOKEN'),
     ],
+
     'language' => [
         'iso_639_1' => 'pt',
         'english_name' => 'Portuguese',
